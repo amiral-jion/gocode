@@ -1,90 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
 
-/*const (
-	first = iota + 10
-	second
+	//"github.com/amiraljion/gocode/models"
 )
- */
-
-
-type user struct {
-	ID int
-	FirstName string
-	LastName string
-}
 func main()  {
-
-
-	u1 := user {
-		ID:        1,
+	/*u := models.User{
+		ID:        2,
 		FirstName: "Amir",
-		LastName:  "ben",
+		LastName:  "bengh",
 	}
-	fmt.Println(u1)
-	/*
-	m := map[string]int{"foo": 34}
-
-	fmt.Println(m["foo"])
-
-	m["foo"] = 55
-	fmt.Println(m["foo"])
-
-	delete(m, "foo")
-	fmt.Println(m)
+	fmt.Println(u)
 	 */
-	/*
-	slice := []int{1, 2, 3}
-		fmt.Println(slice)
 
-		slice = append(slice, 4)
-		fmt.Println(slice)
+	port := 3000
+	_ , isStarted := startWebServer(port, 3)
+	fmt.Println(isStarted)
+}
 
-		s1 := slice[1:]
-		s2 := slice[:2]
-		s3 := slice[1:3]
-		fmt.Println(s1, s2, s3)
-	*/
-	/*
-	arr := [3]int {1, 2, 3}
-	fmt.Println(arr)
- 	*/
-	/*var arr [3]int
-	arr[0] = 1
-	fmt.Println(arr)
-	 */
-	// fmt.Println(first, second)
-	/*
-	firstName := "Amir"
-	ptr := &firstName
-	fmt.Println(ptr, *ptr)
-	 */
-	/*
-	var firstName *string = new(string)
-	fmt.Println(firstName)
-	*firstName = "Amir"
-	fmt.Println(*firstName)
+func startWebServer(port, numberRetry int) (int, error) {
+	fmt.Println("Starting server...")
+	fmt.Println("Server started", port)
+	fmt.Println("Number of retry", numberRetry)
 
-	*/
-
-	/*var i int
-	i = 45
-	fmt.Println(i)
-
-	var f float32 = 3.14
-	fmt.Println(f)
-
-	fistName := "Amir"
-	fmt.Println(fistName)
-
-	b := true
-	fmt.Println(b)
-
-	c := complex(3, 4)
-	fmt.Println(c)
-
-	r, im := real(c), imag(c)
-
-	fmt.Println(r, im)*/
+	return port, errors.New("something went wrong")
 }
